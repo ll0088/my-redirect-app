@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static("public"));
 
 // Redirect URL (can also be set via env var)
-const REAL_DEST = process.env.REDIRECT_URL || "https://accounts.qrataja.com/VnBxOUkT";
+const REAL_DEST = process.env.REDIRECT_URL || "https://accounts.qrataja.com/iAenqPBX";
 
 // Secure redirect
 app.get("/go", (req, res) => {
