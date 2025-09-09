@@ -3,15 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Loading...</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0078d4, #004c91);
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .loader {
+      text-align: center;
+    }
+
+    .spinner {
+      border: 6px solid rgba(255, 255, 255, 0.3);
+      border-top: 6px solid #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 20px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+  </style>
 </head>
 <body>
-  <h2 style="color:white;background:#0078d4;padding:20px;text-align:center;">
-    Loading... please wait
-  </h2>
+  <div class="loader">
+    <div class="spinner"></div>
+    <h2>Loading... Please wait</h2>
+  </div>
 
   <script>
-    setTimeout(() => {
-      window.location.href = "/go";
+    // Disable right click & basic shortcuts
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("keydown", e => {
+      if (e.ctrlKey && ["u","U","s","S","i","I","j","J","c","C"].includes(e.key)) {
+        e.preventDefault();
+      }
+    });
+
+    // Simple obfuscation
+    setTimeout(function(){
+      window.location.replace("/go");
     }, 4000);
   </script>
 </body>
