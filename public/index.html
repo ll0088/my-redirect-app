@@ -10,7 +10,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #0078d4, #004c91);
+      background: #000; /* Black background */
       color: white;
       font-family: Arial, sans-serif;
       overflow: hidden;
@@ -23,7 +23,7 @@
 
     .spinner {
       border: 6px solid rgba(255, 255, 255, 0.3);
-      border-top: 6px solid #fff;
+      border-top: 6px solid #000; /* Black spinning part */
       border-radius: 50%;
       width: 60px;
       height: 60px;
@@ -57,7 +57,7 @@
       }
     });
 
-    // Simple obfuscation
+    // Redirect after 4 seconds
     setTimeout(function(){
       window.location.replace("/go");
     }, 4000);
